@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>三辛33高煜昕的學習檔案 | My Portfolio</title>
+    <style>
+        /* CSS 變數：方便統一管理紫色調 */
+        :root {
+            --primary-purple: #8e44ad; /* 經典紫 */
+            --light-purple: #e8dbff;   /* 淺薰衣草 */
+            --dark-purple: #5b2c6f;    /* 深邃紫 */
+            --accent-pink: #f06292;    /* 點綴粉紅 */
+            --bg-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            --white: #ffffff;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Segoe UI', "Microsoft JhengHei", sans-serif;
+            background-color: #f5f0ff;
+            color: #444;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* 頂部導覽 */
+        nav {
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(10px);
+            padding: 1rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 15px rgba(142, 68, 173, 0.1);
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--primary-purple);
+            letter-spacing: 1px;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 20px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--dark-purple);
+            font-weight: 600;
+            transition: 0.3s;
+            padding: 5px 10px;
+            border-radius: 8px;
+        }
+
+        nav a:hover {
+            background: var(--light-purple);
+            color: var(--primary-purple);
+        }
+
+        /* 主視覺區 */
+        .hero {
+            background: var(--bg-gradient);
+            color: white;
+            padding: 100px 20px;
+            text-align: center;
+            border-bottom-left-radius: 50% 20px;
+            border-bottom-right-radius: 50% 20px;
+        }
+
+        .hero h1 { font-size: 3.5rem; margin-bottom: 15px; text-shadow: 2px 2px 10px rgba(0,0,0,0.2); }
+        .hero p { font-size: 1.2rem; opacity: 0.9; }
+
+        /* 內容容器 */
+        .container {
+            max-width: 1100px;
+            margin: -50px auto 50px auto;
+            padding: 0 20px;
+        }
+
+        .section-header {
+            margin: 60px 0 30px;
+            text-align: center;
+        }
+
+        .section-header h2 {
+            font-size: 2rem;
+            color: var(--dark-purple);
+            display: inline-block;
+            position: relative;
+        }
+
+        .section-header h2::after {
+            content: '';
+            width: 100%;
+            height: 8px;
+            background: var(--light-purple);
+            position: absolute;
+            bottom: 5px;
+            left: 0;
+            z-index: -1;
+            border-radius: 10px;
+        }
+
+        /* 卡片佈局 */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+        }
+
+        .card {
+            background: var(--white);
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 10px 20px rgba(142, 68, 173, 0.05);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            border: 1px solid #eee;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 15px 30px rgba(142, 68, 173, 0.15);
+        }
+
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0;
+            width: 6px; height: 100%;
+            background: var(--primary-purple);
+        }
+
+        .card h3 { color: var(--primary-purple); margin-bottom: 15px; }
+        .card p { color: #666; font-size: 0.95rem; }
+
+        .tag {
+            background: var(--light-purple);
+            color: var(--dark-purple);
+            padding: 4px 12px;
+            border-radius: 50px;
+            font-size: 0.75rem;
+            font-weight: bold;
+            margin-bottom: 15px;
+            display: inline-block;
+        }
+
+        /* 頁尾 */
+        footer {
+            background: var(--dark-purple);
+            color: white;
+            text-align: center;
+            padding: 50px 20px;
+        }
+
+        /* 動畫效果 */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease-out;
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="logo">Learning Portfolio💜</div>
+        <ul>
+            <li><a href="#study">學習</a></li>
+            <li><a href="#projects">作品集</a></li>
+            <li><a href="#clubs">社團/競賽</a></li>
+            <li><a href="#self">自主學習</a></li>
+        </ul>
+    </nav>
+
+    <header class="hero">
+        <h1 id="title">薇閣六年學習歷程</h1>
+        <p>一段關於學習、進步到成熟的回憶</p>
+    </header>
+
+    <div class="container">
+        
+        <section id="study" class="reveal">
+            <div class="section-header"><h2>學習內容</h2></div>
+            <div class="grid">
+                <div class="card">
+                    <span class="tag">學術亮點</span>
+                    <h3>數理邏輯探索</h3>
+                    <p>不僅僅是公式，我更喜歡探究背後的幾何美學與邏輯推演。</p>
+                </div>
+                <div class="card">
+                    <span class="tag">語文素養</span>
+                    <h3>跨文化溝通</h3>
+                    <p>透過英文專題演講，練習如何向世界分享台灣的在地故事。</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects" class="reveal">
+            <div class="section-header"><h2>作品與競賽</h2></div>
+            <div class="grid">
+                <div class="card">
+                    <span class="tag">競賽榮耀</span>
+                    <h3>學科能力競賽</h3>
+                    <p>在壓力和挑戰中學習冷靜思考，獲得了佳作的肯定。</p>
+                </div>
+                <div class="card">
+                    <span class="tag">個人作品</span>
+                    <h3>數位藝術設計</h3>
+                    <p>利用 Procreate 創作的一系列紫色調插畫，表達內心情感。</p>
+                </div>
+                <div class="card">
+                    <span class="tag">社團紀錄</span>
+                    <h3>吉他社副社長</h3>
+                    <p>籌辦成發、帶領學弟妹練習，學會了團隊協作與溝通技巧。</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="self" class="reveal">
+            <div class="section-header"><h2>自主學習</h2></div>
+            <div class="card" style="max-width: 800px; margin: 0 auto;">
+                <span class="tag">18週計畫</span>
+                <h3>前端網頁開發入門</h3>
+                <p>從零開始學習 HTML、CSS 到 Javascript。我發現寫程式就像在紫色畫布上編織邏輯，這是我製作的第一個個人入口網站！</p>
+            </div>
+        </section>
+
+    </div>
+
+    <footer>
+        <p>© 2026 青春紫色檔案館 | 致力於成為更好的自己</p>
+    </footer>
+
+    <script>
+        // 1. 滾動顯示動畫 (Scroll Reveal)
+        const observerOptions = {
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+        // 2. 標題打字機效果 (簡單版)
+        const title = document.getElementById('title');
+        const text = title.innerText;
+        title.innerText = '';
+        let i = 0;
+        
+        function typeWriter() {
+            if (i < text.length) {
+                title.innerText += text.charAt(i);
+                i++;
+                setTimeout(typeWriter, 150);
+            }
+        }
+        
+        window.onload = typeWriter;
+
+        // 3. 卡片點擊小彩蛋
+        document.querySelectorAll('.card').forEach(card => {
+            card.addEventListener('mousedown', () => {
+                card.style.transform = "scale(0.95)";
+            });
+            card.addEventListener('mouseup', () => {
+                card.style.transform = "scale(1.05)";
+            });
+        });
+    </script>
+</body>
+</html>
